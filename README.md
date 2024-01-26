@@ -9,6 +9,13 @@ In the project directory, you can run:
 ### `npm start`
 ### `npm run server:dev`
 
+
+# please make sure your mongoDB is running on 
+```
+port:27017
+```
+
+
 ![back](./src/assets/welcomeUpdate.png)
 ![back](./src/assets/loginUpdate.png)
 ![back](./src/assets/Screenshot%20from%202024-01-26%2023-22-16.png)
