@@ -9,7 +9,7 @@ export const initSocket = async () => {
     };
 
     try {
-        const socket = io(process.env.BACKEND_URL, options);
+        const socket = io('http://localhost:5000', options);
         return socket;
     } catch (error) {
         console.error('Socket connection error:', error);
