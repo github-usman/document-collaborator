@@ -6,7 +6,10 @@ export const Users = (props) => {
     // console.log(props.client," = usernam")
   return (
     <div >
-        <Avatar name={props.username} colors={['orange', 'green','black']} size='70px' round='20px' />
+        <div style={{marginTop:"0.8rem"}}>
+        <Avatar name={props.username} size='60px' round='20px' />
+        </div>
+        <p style={{color:"white",margin:'0.3rem 0.5rem 0.5rem'}}>{props.username}</p>
     </div>
   )
 }

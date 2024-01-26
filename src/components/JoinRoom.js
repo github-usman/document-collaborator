@@ -19,7 +19,7 @@ const JoinRoom = () => {
     if(uuidVal && username){
       navigate(`../../editor/${uuidVal}`,{
         state:{
-          username
+          username,
         }
       });
     }else{

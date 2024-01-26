@@ -11,9 +11,8 @@
 }
 .asideInner{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-    gap: 10px;
 }
 
 .editor-buttons{
@@ -39,10 +38,11 @@
     background-color: #cf5f5fcc;
 }
 
-.users-list{
+/* .users-list{
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+    margin-top: 1rem;
+} */
 
 /* dcos main editor */
 
