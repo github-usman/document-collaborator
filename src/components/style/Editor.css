@@ -43,3 +43,21 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+/* dcos main editor */
+
+
+.main-editor{
+    width: 100%;
+    
+
+}
+
+.writable-area{
+    width: 90%;
+    margin: auto;
+    background-color:#c7bdbdf1;
+    min-height: calc(100vh - 6rem); 
+    height: 100%;
+
+}
