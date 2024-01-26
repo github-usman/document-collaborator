@@ -1,0 +1,42 @@
+
+.container{
+    width: 90%;
+    margin:1rem auto;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 18rem;
+    
+}
+
+.menu>*{
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    background-color: #F6B17A;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    color: #2D3250;
+}
+.menu>*:hover{
+    background-color: #7077A1;
+    color: #F6B17A;
+}
+
+h1{
+    display: inline;
+   white-space:nowrap;
+   background-color: #F6B17A;
+   color: #2D3250;
+   padding: 0 1rem;
+   border-radius: 3px;
+}
+
+h1>span{
+    color: whitesmoke;
+}
