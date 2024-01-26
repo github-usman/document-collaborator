@@ -22,8 +22,13 @@ const Welcome = () => (
         attr="placeholder"
         loop
       >
-        <input type="text" />
+        <input type="text"  />
       </ReactTyped>
+      <div className="login-btn">
+        <button>Log In</button>
+        <button>Sign Up</button>
+
+      </div>
         
     </div>
     </div>

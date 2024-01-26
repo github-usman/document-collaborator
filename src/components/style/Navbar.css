@@ -1,6 +1,6 @@
 
 .container{
-    width: 90%;
+    width: 95%;
     margin:1rem auto;
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@
     font-size: 18px;
     background-color: #F6B17A;
     padding: .5rem 1rem;
-    border-radius: 5px;
+    border-radius: 1px;
     color: #2D3250;
 }
 .menu>*:hover{

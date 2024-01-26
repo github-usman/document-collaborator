@@ -1,0 +1,45 @@
+.aside{
+    height: calc(100vh - 6rem);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-right: 1px solid rgb(206, 202, 202);
+}
+.mainWrap{
+    display: grid;
+    grid-template-columns: 18rem auto;
+}
+.asideInner{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.editor-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+.editor-buttons button{
+    padding:.5rem 0;
+    color: #000000;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: bolder
+}
+
+.editor-buttons button:nth-child(1){
+    background-color: #7ee474;
+    margin-bottom: 1rem;
+}
+
+.editor-buttons button:nth-child(2){
+    background-color: #cf5f5fcc;
+}
+
+.users-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

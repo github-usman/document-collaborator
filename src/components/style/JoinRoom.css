@@ -1,5 +1,70 @@
 
 
-.entryCard{
- background-color: #7077A1;       
+.entry-card{
+    background-color: #23252e;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 45%;
+    box-shadow: 1px 1px 15px 2px #f5f1f1;
 }
+.container-form{
+display: flex;
+justify-content: center;
+align-content: center;
+height: calc(100vh - 6rem); 
+align-items: center; 
+}
+
+.join-form{
+    display: flex;
+   flex-direction: column;
+}
+
+.join-form>div{
+    display: flex;
+    flex-direction: column;
+}
+.join-form button{
+    background-color: #F6B17A;
+    padding: .5rem 2rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight:bolder;
+    cursor: pointer;
+    margin-top: 2.5rem;
+    letter-spacing: 1px;
+    font-size: 15px ;
+}
+
+.join-form button:hover{
+    background-color: #7077A1;
+}
+.join-form input{
+    padding: .5rem .2rem;
+}
+
+.join-form label{
+    color: white;
+    margin-bottom: .3rem;
+    letter-spacing: 1px;
+}
+
+.join-form label:nth-child(3){
+    padding-top: 1rem;
+}
+
+.entry-card p{
+    color: white;
+    text-align: right;
+    margin-top: 1rem;
+}
+.entry-card .create-new {
+    color: #F6B17A;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+    
+}
+
+
+
