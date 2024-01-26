@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import "./style/Navbar.css";
-import { useState } from "react";
+import { useAuth } from "../authContext";
 
 const Navbar = () => {
-  // eslint-disable-next-line
-  const  [navbarVisible, setNavbarVisible] = useState(false)
+  const { isAuthenticated } = useAuth();
   return (
     <>
-     {navbarVisible&& 
+     {isAuthenticated && 
       <ul className="container">
         <h1><span>D</span>ocument-<span>C</span></h1>
         <div className="menu">

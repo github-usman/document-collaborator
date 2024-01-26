@@ -3,15 +3,18 @@ import "./style/JoinRoom.css";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { useAuth } from '../authContext';
 
 const Login = () => {
   const [uuidVal, setUuidVal] = useState("");
   const [username, setUsername] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit =(e)=>{
     e.preventDefault();
     navigate('/join-room');
+    login();
     toast.success('Logged In Successfully');
   }
   return (

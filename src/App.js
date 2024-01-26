@@ -8,13 +8,15 @@ import { Toaster } from "react-hot-toast";
 // import { useEffect, useState } from "react";
 import SignUP from "./components/SignUp";
 import Login from "./components/Login";
+import { AuthProvider } from "./authContext";
 
 function App() {
 
   return (
+    <AuthProvider>
     <div className="allContent">
       <div>
-             <Toaster
+            <Toaster
                     position="top-right"
                     toastOptions={{
                         success: {
@@ -36,6 +38,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </AuthProvider>
   );
 }
 

@@ -11,6 +11,7 @@ import {
     Navigate,
     useParams,
 } from 'react-router-dom';
+import { useAuth } from '../authContext';
 
 const Editor = () => {
     const socketRef = useRef(null);
@@ -74,6 +75,7 @@ const Editor = () => {
         };
          // eslint-disable-next-line
     }, []);
+     const {logout}= useAuth()
 
     async function copyRoomId() {
         try {
@@ -86,8 +88,10 @@ const Editor = () => {
     }
     
     function leaveRoom() {
-        reactNavigator('/');
-        toast.success('You left the Room Successfully');
+        reactNavigator('/join-room');
+        toast.success('You left the Room Successfully')
+        logout();
+        
     }
 
     if (!location.state) {
