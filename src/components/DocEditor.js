@@ -7,12 +7,15 @@ const DocEditor = ({ socketRef, roomId }) => {
   const [content, setContent] = useState('');
   const editorRef = useRef();
 
-  const handleChange = (value) => {
-    setContent(value);
-    socketRef.current.emit(ACTIONS.CODE_CHANGE, {
-      roomId,
-      content: value,
-    });
+  const handleChange = (value, _, source) => {
+    // Only emit the change if it's caused by user input
+    if (source === 'user') {
+      setContent(value);
+      socketRef.current.emit(ACTIONS.CODE_CHANGE, {
+        roomId,
+        content: value,
+      });
+    }
   };
 
   useEffect(() => {
