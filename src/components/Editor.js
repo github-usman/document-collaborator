@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import ACTIONS from './Actions';
 // import Client from '../components/Client';
 import DocEditor from './DocEditor';
@@ -28,7 +28,7 @@ const Editor = () => {
 
             function handleErrors(e) {
                 console.log('socket error', e);
-                // toast.error('Socket connection failed, try again later.');
+                toast.error('Socket connection failed, try again later.');
                 reactNavigator('/');
             }
 
@@ -42,7 +42,7 @@ const Editor = () => {
                 ACTIONS.JOINED,
                 ({ clients, username, socketId }) => {
                     if (username !== location.state?.username) {
-                        // toast.success(`${username} joined the room.`);
+                        toast.success(`${username} joined the room.`);
                         console.log(`${username} joined`);
                     }
                     setClients(clients);
@@ -57,7 +57,7 @@ const Editor = () => {
             socketRef.current.on(
                 ACTIONS.DISCONNECTED,
                 ({ socketId, username }) => {
-                    // toast.success(`${username} left the room.`);
+                    toast.success(`${username} left the room.`);
                     setClients((prev) => {
                         return prev.filter(
                             (client) => client.socketId !== socketId
@@ -68,9 +68,9 @@ const Editor = () => {
         };
         init();
         return () => {
-            // socketRef.current.disconnect();
-            // socketRef.current.off(ACTIONS.JOINED);
-            // socketRef.current.off(ACTIONS.DISCONNECTED);
+            socketRef.current.disconnect();
+            socketRef.current.off(ACTIONS.JOINED);
+            socketRef.current.off(ACTIONS.DISCONNECTED);
         };
     }, []);
 
