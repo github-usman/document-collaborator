@@ -3,6 +3,7 @@ import "./style/Navbar.css";
 import { useState } from "react";
 
 const Navbar = () => {
+  // eslint-disable-next-line
   const  [navbarVisible, setNavbarVisible] = useState(false)
   return (
     <>

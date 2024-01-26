@@ -72,21 +72,22 @@ const Editor = () => {
             socketRef.current.off(ACTIONS.JOINED);
             socketRef.current.off(ACTIONS.DISCONNECTED);
         };
+         // eslint-disable-next-line
     }, []);
 
-    async function copyRoomId() {
-        try {
-            await navigator.clipboard.writeText(roomId);
-            // toast.success('Room ID has been copied to your clipboard');
-        } catch (err) {
-            // toast.error('Could not copy the Room ID');
-            console.error(err);
-        }
-    }
+    // async function copyRoomId() {
+    //     try {
+    //         await navigator.clipboard.writeText(roomId);
+    //         // toast.success('Room ID has been copied to your clipboard');
+    //     } catch (err) {
+    //         // toast.error('Could not copy the Room ID');
+    //         console.error(err);
+    //     }
+    // }
 
-    function leaveRoom() {
-        reactNavigator('/');
-    }
+    // function leaveRoom() {
+    //     reactNavigator('/');
+    // }
 
     if (!location.state) {
         return <Navigate to="/" />;
