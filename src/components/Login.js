@@ -4,7 +4,6 @@ import {v4 as uuid} from "uuid";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
-
 const Login = () => {
   const [uuidVal, setUuidVal] = useState("");
   const [username, setUsername] = useState("");

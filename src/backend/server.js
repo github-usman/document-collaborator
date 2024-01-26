@@ -3,8 +3,47 @@ const app = express();
 const http = require('http');
 const path = require('path');
 const { Server } = require('socket.io');
-const ACTIONS = require('./components/Actions.js');
+const ACTIONS = require('../components/Actions.js');
+const bodyParser = require('body-parser');
 
+// db connection
+const { connectMongodb, User } = require('./database.js');
+connectMongodb();
+
+app.use(bodyParser.json());
+
+
+
+// registration of users
+app.post('/signup', async (req, res) => {
+  try {
+      const { username, password, name } = req.body;
+      if (!username || !password || !name) {
+        console.log(req.body," values is not pring =>");
+          return res.status(400).json({ error: 'Missing required fields' });
+      }
+
+      const newUser = new User({
+          username,
+          password,
+          name,
+      });
+
+      const savedUser = await newUser.save();
+
+      res.status(201).json(savedUser);
+  } catch (error) {
+      console.error('Error saving user:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+
+
+
+
+// socket connection
 const server = http.createServer(app);
 const io = new Server(server);
 

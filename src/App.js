@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import "./index.css";
 import Welcome from "./components/Welcome";
 import Editor from "./components/Editor";
+import { Toaster } from "react-hot-toast";
 // import { useEffect, useState } from "react";
 import SignUP from "./components/SignUp";
 import Login from "./components/Login";
@@ -12,6 +13,18 @@ function App() {
 
   return (
     <div className="allContent">
+      <div>
+             <Toaster
+                    position="top-right"
+                    toastOptions={{
+                        success: {
+                            theme: {
+                                primary: '#4aed88',
+                            },
+                        },
+                    }}
+                ></Toaster>
+            </div>
       <BrowserRouter>
        <Navbar/>
         <Routes>

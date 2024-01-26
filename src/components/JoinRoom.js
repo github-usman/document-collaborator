@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./style/JoinRoom.css";
 import {v4 as uuid} from "uuid";
 import { useNavigate } from 'react-router';
+import toast from 'react-hot-toast';
 
 
 const JoinRoom = () => {
@@ -23,7 +24,8 @@ const JoinRoom = () => {
         }
       });
     }else{
-      alert("Please Enter room ID and password")
+      toast.error('Please Enter room ID and password');
+     
     }
   }
   return (
