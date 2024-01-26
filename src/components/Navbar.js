@@ -3,7 +3,7 @@ import "./style/Navbar.css";
 import { useState } from "react";
 
 const Navbar = () => {
-  const  [navbarVisible, setNavbarVisible] = useState(true)
+  const  [navbarVisible, setNavbarVisible] = useState(false)
   return (
     <>
      {navbarVisible&& 
