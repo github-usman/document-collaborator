@@ -1,14 +1,14 @@
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ACTIONS from './Actions';
 
 const DocEditor = ({ socketRef, roomId }) => {
   const [content, setContent] = useState('');
-  const editorRef = useRef();
+
 
   const handleChange = (value, _, source) => {
-    // Only emit the change if it's caused by user input
+   
     if (source === 'user') {
       setContent(value);
       socketRef.current.emit(ACTIONS.CODE_CHANGE, {
@@ -24,6 +24,7 @@ const DocEditor = ({ socketRef, roomId }) => {
         setContent(content);
       });
     }
+    // eslint-disable-next-line
   }, [socketRef.current]);
 
   return (
