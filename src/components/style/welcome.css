@@ -43,6 +43,6 @@
    .login-btn button:hover{
     background-color: #7077A1;
    }
-  .login-btn button:nth-child(2){
+  .login-btn>:nth-child(2){
     margin-left: 2rem;
   }

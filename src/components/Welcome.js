@@ -1,5 +1,6 @@
 import { ReactTyped } from "react-typed";
 import "./style/welcome.css";
+import { Link } from "react-router-dom";
 const Welcome = () => (
   <div className="welcome-container">
     <div className="welcome-content">
@@ -25,9 +26,8 @@ const Welcome = () => (
         <input type="text"  />
       </ReactTyped>
       <div className="login-btn">
-        <button>Log In</button>
-        <button>Sign Up</button>
-
+        <Link to={'/login'}><button>Log In</button></Link> 
+        <Link to={'/signup'}><button>Sign Up</button></Link> 
       </div>
         
     </div>
