@@ -13,6 +13,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
+    gap: 5px;
 }
 
 .editor-buttons{

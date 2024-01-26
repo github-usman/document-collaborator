@@ -106,7 +106,7 @@ const Editor = () => {
         </div>
       </div>
       <div>
-      <DocEditor/>
+      <DocEditor socketRef = {socketRef} roomId={roomId}/>
       </div>
     </div>
   );
