@@ -75,19 +75,20 @@ const Editor = () => {
          // eslint-disable-next-line
     }, []);
 
-    // async function copyRoomId() {
-    //     try {
-    //         await navigator.clipboard.writeText(roomId);
-    //         // toast.success('Room ID has been copied to your clipboard');
-    //     } catch (err) {
-    //         // toast.error('Could not copy the Room ID');
-    //         console.error(err);
-    //     }
-    // }
-
-    // function leaveRoom() {
-    //     reactNavigator('/');
-    // }
+    async function copyRoomId() {
+        try {
+            await navigator.clipboard.writeText(roomId);
+            toast.success('Room ID has been copied to your clipboard');
+        } catch (err) {
+            toast.error('Could not copy the Room ID');
+            console.error(err);
+        }
+    }
+    
+    function leaveRoom() {
+        reactNavigator('/');
+        toast.success('You left the Room Successfully');
+    }
 
     if (!location.state) {
         return <Navigate to="/" />;
@@ -102,8 +103,8 @@ const Editor = () => {
           ))}
         </div>
         <div className="editor-buttons">
-          <button>Copy join ID</button>
-          <button>Leave collaboration</button>
+          <button onClick={copyRoomId}>Copy join ID</button>
+          <button onClick={leaveRoom}>Leave collaboration</button>
         </div>
       </div>
       <div>
