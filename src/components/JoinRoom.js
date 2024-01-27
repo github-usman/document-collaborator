@@ -3,11 +3,14 @@ import "./style/JoinRoom.css";
 import {v4 as uuid} from "uuid";
 import { useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
+import { useAuth } from '../authContext';
 
 
 const JoinRoom = () => {
   const [uuidVal, setUuidVal] = useState("");
   const [username, setUsername] = useState("");
+  const{login} = useAuth();
+  login();
   const navigate = useNavigate();
     const handleCreateNew =()=>{
     const id = uuid();

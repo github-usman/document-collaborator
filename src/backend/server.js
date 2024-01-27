@@ -5,42 +5,44 @@ const path = require('path');
 const { Server } = require('socket.io');
 const ACTIONS = require('../components/Actions.js');
 const bodyParser = require('body-parser');
-
+const passport = require('passport');
+const expressSession = require('express-session');
 // db connection
 const { connectMongodb, User } = require('./database.js');
+const { initializingPassport } = require('./passportConfig.js');
 connectMongodb();
 
 app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(expressSession({ 
+  secret: "mySecret", 
+  resave: false,
+   saveUninitialized: false
+   }));
+app.use(passport.session());
+app.use(passport.initialize());
 
 
+
+initializingPassport(passport);
+
+
+
+// login 
+
+app.post('/login',passport.authenticate('local'),async(req,res)=>{
+   res.redirect("http://localhost:3000/join-room");
+})
 
 // registration of users
 app.post('/signup', async (req, res) => {
-  try {
-      const { username, password, name } = req.body;
-      if (!username || !password || !name) {
-        console.log(req.body," values is not pring =>");
-          return res.status(400).json({ error: 'Missing required fields' });
-      }
-
-      const newUser = new User({
-          username,
-          password,
-          name,
-      });
-
-      const savedUser = await newUser.save();
-
-      res.status(201).json(savedUser);
-  } catch (error) {
-      console.error('Error saving user:', error);
-      res.status(500).json({ error: 'Internal server error' });
-  }
+  console.log(req.body,"body value");
+  const user = await User.findOne({ username: req.body.username });
+  if (user) return res.status(400).send('This user is already exists');
+  const newUser = await User.create(req.body);
+  res.redirect('http://localhost:3000/login');
 });
-
-
-
-
 
 
 // socket connection

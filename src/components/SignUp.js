@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const SignUP = () => {
   const [formData, setFormData] = useState({
@@ -13,30 +13,28 @@ const SignUP = () => {
   const handleChange = (e) => {
     setFormData({ ...formData,  [e.target.name]: e.target.value, });
   };
-  const navigate = useNavigate();
+
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate('/login');
     toast.success('Account created Successfully');
   };
 
   return (
     <div className='container-form '>
       <div className='entry-card'>
-        <form className='join-form' onSubmit={handleSubmit}>
+        <form action='http://localhost:5000/signup' method='post' className='join-form'>
           <div>
             <label>Enter Your Name</label>
-            <input type='text' onChange={handleChange} placeholder='Enter Your Name' name='name' />
+            <input type='text' onChange={handleChange} placeholder='Enter Your Name' name='name' required />
             <label>Enter Username</label>
-            <input type='text' onChange={handleChange} placeholder='Enter Username' name='username' />
-            <label>Enter Password</label>
-            <input type='password' placeholder='Enter Your Password' name='password' onChange={handleChange} />
+            <input type='text' onChange={handleChange} placeholder='Enter Username' name='username' required/>
+            <label>Enter New Password</label>
+            <input type='password' placeholder='Enter new Password' name='password' onChange={handleChange} required/>
             <br></br>
-            <label>Confirm Password</label>
-            <input type='password' placeholder='Confirm Your Password' name='cpassword' onChange={handleChange} />
+            <label>Confirm New Password</label>
+            <input type='password' placeholder='Confirm Your new Password' name='cpassword' onChange={handleChange} required/>
           </div>
-          <button type='submit' >Sign Up</button>
+          <button type='submit' onClick={handleSubmit} >Sign Up</button>
           <p>
             If you have already an account then please<Link to={'/login'}><span className='create-new'> Login</span></Link>{' '}
           </p>
