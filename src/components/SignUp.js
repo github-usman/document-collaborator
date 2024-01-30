@@ -23,6 +23,7 @@ const SignUP = () => {
     <div className='container-form '>
       <div className='entry-card'>
         <form action='http://localhost:5000/signup' method='post' className='join-form'>
+        <h1>Sign Up</h1>
           <div>
             <label>Enter Your Name</label>
             <input type='text' onChange={handleChange} placeholder='Enter Your Name' name='name' required />

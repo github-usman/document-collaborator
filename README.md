@@ -17,8 +17,8 @@ port:27017
 
 
 ![back](./src/assets/welcomeUpdate.png)
-![back](./src/assets/loginUpdate.png)
-![back](./src/assets/Screenshot%20from%202024-01-26%2023-22-16.png)
+![back](./src/assets/log_document_coll.png)
+![back](./src/assets/Signup_document_collaborative.png)
 ![back](./src/assets/Screenshot%20from%202024-01-26%2023-20-07.png)
 ![back](./src/assets/Screenshot%20from%202024-01-26%2023-20-22.png)
 

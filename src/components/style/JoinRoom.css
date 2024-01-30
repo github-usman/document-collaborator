@@ -7,6 +7,12 @@
     width: 45%;
     box-shadow: 1px 1px 15px 2px #f5f1f1;
 }
+.entry-card h1{
+    width: 10rem;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 2rem;
+}
 .container-form{
 display: flex;
 justify-content: center;

@@ -13,6 +13,7 @@ const Login = () => {
     <div className='container-form '>
       <div className='entry-card'>
         <form action='http://localhost:5000/login' method='post'  className='join-form' >
+          <h1>Log In</h1>
           <div>
           <label>Enter Username</label>
           <input type='text' value={uuidVal}  onChange={(e)=>setUuidVal(e.target.value)} placeholder='Enter Username' name='username' required/>
